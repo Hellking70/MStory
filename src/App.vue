@@ -1,22 +1,18 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup lang="ts">
+import TreeGrid from "./components/TreeGrid.vue";
+import {items} from "./mocks/mockData.ts";
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <div id="app">
+    <h2>Тестовое задание MStroy — Tree Grid</h2>
+    <TreeGrid :items="items" />
+  </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+#app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 </style>

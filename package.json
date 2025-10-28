@@ -10,7 +10,10 @@
     "husky:init": "pnpm husky install & pnpm husky set .husky/commit-msg \"pnpm commitlint --edit $1\""
   },
   "dependencies": {
-    "vue": "^3.5.22"
+    "vue": "^3.5.22",
+    "ag-grid-community": "^31.0.3",
+    "ag-grid-enterprise": "^31.0.3",
+    "ag-grid-vue3": "^31.0.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
