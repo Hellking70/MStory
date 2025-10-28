@@ -7,7 +7,7 @@
     "dev": "node_modules/.bin/vite",
     "build": "node_modules/.bin/vite build",
     "preview": "node_modules/.bin/vite preview",
-    "husky:init": "pnpm husky install & pnpm husky set .husky/commit-msg \"pnpm commitlint --edit $1\"",
+    "husky:init": "npm husky install & npm husky set .husky/commit-msg \"npm commitlint --edit $1\"",
     "test": "vitest",
     "test:watch": "vitest watch"
   },

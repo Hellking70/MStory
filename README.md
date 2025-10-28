@@ -1,5 +1,25 @@
-# Vue 3 + Vite
+# MStory test task 
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Requirements
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+[![Node JS](https://img.shields.io/badge/node-20.11.0-red)](https://nodejs.org/en/blog/release/v20.11.0)
+[![NPM](https://img.shields.io/badge/npm-10.2.4-yellow)](https://www.npmjs.com/package/npm/v/10.2.4)
+
+
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+npm install
+npm husky:init
+```
+
+## Development Server
+
+Start the development server on http://localhost:5173
+
+```bash
+npm run dev
+```
+
