@@ -21,10 +21,12 @@ class TreeStore {
 
         for (const item of items) {
             this.idMap.set(item.id, item);
-            if (!this.childrenMap.has(item.parent)) {
-                this.childrenMap.set(item.parent, []);
+            if (item.parent !== null) {
+                if (!this.childrenMap.has(item.parent)) {
+                    this.childrenMap.set(item.parent, []);
+                }
+                this.childrenMap.get(item.parent)!.push(item);
             }
-            this.childrenMap.get(item.parent)!.push(item);
         }
     }
 
@@ -87,7 +89,7 @@ class TreeStore {
         let currentId: string | number | null = id;
 
         while (currentId !== null && this.idMap.has(currentId)) {
-            const item = this.idMap.get(currentId)!;
+            const item: TreeItem = this.idMap.get(currentId)!;
             result.push(item);
             currentId = item.parent;
         }
@@ -108,10 +110,12 @@ class TreeStore {
         this.items.push(item);
         this.idMap.set(item.id, item);
 
-        if (!this.childrenMap.has(item.parent)) {
-            this.childrenMap.set(item.parent, []);
+        if(item.parent !== null) {
+            if (!this.childrenMap.has(item.parent)) {
+                this.childrenMap.set(item.parent, []);
+            }
+            this.childrenMap.get(item.parent)!.push(item);
         }
-        this.childrenMap.get(item.parent)!.push(item);
     }
 
     /**
@@ -130,10 +134,12 @@ class TreeStore {
 
         this.childrenMap.clear();
         for (const item of this.items) {
-            if (!this.childrenMap.has(item.parent)) {
-                this.childrenMap.set(item.parent, []);
+            if(item.parent !== null) {
+                if (!this.childrenMap.has(item.parent)) {
+                    this.childrenMap.set(item.parent, []);
+                }
+                this.childrenMap.get(item.parent)!.push(item);
             }
-            this.childrenMap.get(item.parent)!.push(item);
         }
     }
 
@@ -156,10 +162,12 @@ class TreeStore {
         if (parentChanged) {
             this.childrenMap.clear();
             for (const it of this.items) {
-                if (!this.childrenMap.has(it.parent)) {
-                    this.childrenMap.set(it.parent, []);
+                if(it.parent !== null) {
+                    if (!this.childrenMap.has(it.parent)) {
+                        this.childrenMap.set(it.parent, []);
+                    }
+                    this.childrenMap.get(it.parent)!.push(it);
                 }
-                this.childrenMap.get(it.parent)!.push(it);
             }
         }
     }
